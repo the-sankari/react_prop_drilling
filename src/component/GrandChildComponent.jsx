@@ -1,13 +1,8 @@
-/* eslint-disable react/prop-types */
-import React from 'react'
+import React from "react";
+import MyContext from "../service/MyContext";
 
-const GrandChildComponent = (props) => {
+const GrandChildComponent = () => {
+  return <MyContext.Consumer>{(data) => <div>{data}</div>}</MyContext.Consumer>;
+};
 
-  return (
-    <div>
-      {props.data}
-    </div>
-  )
-}
-
-export default GrandChildComponent
+export default GrandChildComponent;

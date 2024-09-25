@@ -1,13 +1,13 @@
-import React from 'react'
-import GrandChildComponent from './GrandChildComponent'
+import React from "react";
+import GrandChildComponent from "./GrandChildComponent";
+import MyContext from "../service/MyContext";
 
-const ChildComponent = (props) => {
-
+const ChildComponent = () => {
   return (
-    <div>
-      <GrandChildComponent data={props.data} ></GrandChildComponent>
-    </div>
-  )
-}
+    <MyContext.Consumer>
+      {(data) => <GrandChildComponent data={data} />}
+    </MyContext.Consumer>
+  );
+};
 
-export default ChildComponent
+export default ChildComponent;

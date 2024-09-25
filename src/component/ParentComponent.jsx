@@ -1,12 +1,13 @@
 import React from "react";
 import ChildComponent from "./ChildComponent";
+import MyContext from "../service/MyContext";
 
 const ParentComponent = () => {
   const data = "Hello from Parent";
   return (
-    <div>
-      <ChildComponent data={data}></ChildComponent>
-    </div>
+    <MyContext.Provider value={data}>
+      <ChildComponent />
+    </MyContext.Provider>
   );
 };
 
